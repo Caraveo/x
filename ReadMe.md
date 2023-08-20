@@ -5,7 +5,7 @@
 Our Goal is to create a trully unique Cross(X) platform language that can be used to create anything from a simple task manager to a full blown game engine.
 
 It is a high-level scripting language, that is attempting to be a true programming language.
-Not optimized for compilation speed yet for ease of use and readability.  It is considered a Mark-up Language with adnaced features that allow it to be used as a programming language.
+Not optimized for compilation speed yet for ease of use and readability.  It is considered a Mark-up Language with advanced features that allow it to be leveraged as a programming language.
 
 Although we are not focusing on speed, we are focusing on the ability to create *fast* programs that can be used on any platform.  In the future we plan on implementing a JIT compiler to make it even faster, as well as Garbage Collection, and a Memory Management System.
 
