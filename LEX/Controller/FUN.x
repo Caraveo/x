@@ -1,0 +1,7 @@
+STRING, INTEGER FUN()[
+    GIVE "Hello" + World, 10
+]
+
+FUN()
+FUN.STRING
+FUN.INTEGER

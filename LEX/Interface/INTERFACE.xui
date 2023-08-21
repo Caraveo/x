@@ -1,0 +1,10 @@
+Bring DATA.xd
+#INTERFACE As in a VIEW Module in MVC
+
+[WINDOW: Menu]
+	[PROFILE: Image][TEXT: Description]
+	[INPUT: Email]
+	[INPUT: Password]
+	[TOGGLE: Remember]
+	[TOGGLE: Terms]
+	[BUTTON: Login][BUTTON: Register]

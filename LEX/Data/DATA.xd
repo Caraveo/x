@@ -1,0 +1,36 @@
+Take API.x
+
+# DATA Module As in Model in MVC
+# Considered Routes and Routing
+
+MENU:
+	TITLE: "Unix Application"
+	DESCRIPTION: "A Helpful UI Appllication"
+	
+IMAGE: 
+	URL: "/profile.png"
+	FILE: ""
+	PATH: ""
+
+TEXT: 
+	API().VIEW("Description")
+
+EMAIL:
+	CALL Email()[
+		#Logic
+	]
+
+PASSWORD:
+	CALL Password()[]
+
+REMEMBER:
+	CALL Remember()[]
+
+TERMS:
+	CALL Terms()[]
+
+LOGIN:
+	CALL Login()[]
+	
+REGISTER:
+	CALL Password()[]
