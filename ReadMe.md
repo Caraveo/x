@@ -31,7 +31,9 @@ Although we are not focusing on speed, we are focusing on the ability to create 
 
     MODEL - Model Based Programming [Swift]
 
-    DYNAMIC - Dynamic Type [Python]
+    DYNAMIC INFERENCE  - Dynamic Type don't have to declare types, yet strongly recommended [Python]
+
+    STATIC INFERENCE - Static Type, must declare types [C++] or be Warned [C#] Disable in Compiler Options
 
 
 **Define a Variable <TYPE>**
