@@ -54,7 +54,7 @@ Although we are not focusing on speed, we are focusing on the ability to create 
     Bool Check with Safe Check.
 
 **CREATE A Function**
-    #Type/Class/Method/Function: are implemented in ALL CAPS
+    #Type/Class/Method/Function: are implemented in First Letter Capitalized yet you can use all caps if you want. Ex: Fun()
 
     VOID CREATE X()[
         DISPLAY[Greeting]
