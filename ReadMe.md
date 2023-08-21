@@ -1,13 +1,15 @@
+
+
 **EXTENSIBLE PROGRAMMING LANGUAGE**
 
-*XPL or X++ is a programming language that is designed to be easy to use and easy to learn. It is a compiled language that is designed to be compiled into C++ code. It is designed to be a general purpose language that can be used for anything yet is levaraging the power of C++ to make it easier to make API calls and create simple programs with NICE interfaces.*
+*XPL or X++ is a programming language that is designed to be easy to use and easy to learn. It is a compiled language that is designed to be compiled into C++ code. It is designed to be a general-purpose language that can be used for anything yet is leveraging the power of C++ to make it easier to make API calls and create simple programs with NICE interfaces.*
 
-Our Goal is to create a trully unique Cross(X) platform language that can be used to create anything from a simple task manager to a full blown game engine.
+Our goal is to create a truly unique Cross(X) platform language that can be used to create anything from a simple task manager to a full-blown game engine.
 
 It is a high-level scripting language, that is attempting to be a true programming language.
 Not optimized for compilation speed yet for ease of use and readability.  It is considered a Mark-up Language with advanced features that allow it to be leveraged as a programming language.
 
-Although we are not focusing on speed, we are focusing on the ability to create *fast* programs that can be used on any platform.  In the future we plan on implementing a JIT compiler to make it even faster, as well as Garbage Collection, and a Memory Management System.
+Although we are not focusing on speed, we are focusing on the ability to create *fast* programs that can be used on any platform.  In the future, we plan on implementing a JIT compiler to make it even faster, as well as Garbage Collection, and a Memory Management System.
 
 **FEATURES Inspired By Great Programming Languages**
 
@@ -19,31 +21,31 @@ Although we are not focusing on speed, we are focusing on the ability to create 
 
     CROSS PLATFORM - Leveraged on any Platform [JavaScript]
 
-    OBJECT ORIENTED - Object Oriented Programming [Objective C]
+    OBJECT ORIENTED - Object-Oriented Programming [Objective C]
 
     FUNCTIONAL - Functional Programming Features 
 
-    LINE - Line by Line Execution [Python]
+    LINE - Line-by-Line Execution [Python]
 
     STRICT - Strict Syntax
 
     CHAINED - Chained Syntax [Swift]
 
-    MODEL - Model Based Programming [Swift]
+    MODEL - Model-Based Programming [Swift]
 
     DYNAMIC - Dynamic Type [Python]
 
 
 **Define a Variable <TYPE>**
 
-    STRING Welcome : "Hello World!"
+    STRING Welcome: "Hello World!"
     Define a String Variable
 
-    INDEX Greetings: ["Hello","Hey!","Hi!"]
+    INDEX Greetings: ["Hello", "Hey!", "Hi!"]
     JSON Object-like based Indexing System
 
     FLOAT Float: 12.0 
-    Extended Float High Precision - Memery intensive
+    Extended Float High Precision - Memory intensive
 
     INTEGER Int: 10
     Define and Assign an integer.
@@ -93,5 +95,5 @@ Although we are not focusing on speed, we are focusing on the ability to create 
     #Display "Hi"
 
 
-***Don't SCREAM at my compiler! I mean it depends on what you'r doing... Just a little joke. 😒***
+***Don't SCREAM at my compiler! I mean it depends on what you're doing... Just a little joke. 😒***
 
