@@ -1,5 +1,5 @@
 
-class CharClassifier
+class TokenClass
 {
     public:
         enum Type
@@ -15,8 +15,5 @@ class CharClassifier
             MULTI_LINE_COMMENT_START,
             MULTI_LINE_COMMENT_END,
             UNKNOWN,
-        };
-
-    
-       
+        }; 
 };

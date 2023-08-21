@@ -31,66 +31,67 @@ Although we are not focusing on speed, we are focusing on the ability to create 
 
     MODEL - Model Based Programming [Swift]
 
+    DYNAMIC - Dynamic Type [Python]
 
-**Define a Class/Method/Function**
-
-    X FUN[
-        DISPLAY["Hello World"]
-    ]
 
 **Define a Variable <TYPE>**
 
-    STRING String: Hello World! + 'Hello'
+    STRING Welcome : "Hello World!"
+    Define a String Variable
 
-    INDEX: ARRAY/LIST/DICTIONARY
+    INDEX Greetings: ["Hello","Hey!","Hi!"]
     JSON Object-like based Indexing System
 
     FLOAT Float: 12.0 
     Extended Float High Precision - Memery intensive
 
-    INTEGER Integer: Integer
+    INTEGER Int: 10
+    Define and Assign an integer.
 
     BOOL Check: TRUE/FALSE/EXIST
+    Bool Check with Safe Check.
+
+**CREATE A Function**
+    #Type/Class/Method/Function: are implemented in ALL CAPS
+
+    VOID CREATE X()[
+        DISPLAY[Greeting]
+    ]
+
+![CREATE A TYPE CLASS METHOD OR FUNCTION](FEATURES/DIAGRAMS/CREATE.png "CREATE")
 
 **Call A Function**
+    #CALL/EXECUTE/USE/GET/SET: are implemented in ALL CAPS
+    
+    CALL X()
 
-    FUN[]
+**CREATE an Instance of... Class**
+    #NEW: To implement a NEW instance of a class.
 
-**CREATE an Instance of.. Class**
+    NEW X2 X()
 
-    FUN()
 
-**Call A String Within an instanced Class**
+**CREATE an Instance of... Class with Parameters**
+    #Convention: Parameters All-Lower case.
 
-    FUN.String
-    #This will return the string value of the function
+    RIDE NEW X2 X(STRING string, INTEGER int)
+    [
+        DISPLAY[string]
+        DISPLAY[int]
+    ]
 
-**Built in METHODS**
+![NEW INSTANCE](FEATURES/DIAGRAMS/NEW.png "CREATE")
 
-    API[] :: This will allow you to call any API function from any language
+**GRAB to iterate through an index**
+ 
+    GRAB Greeting IN Greetings[
+        DISPLAY[Greeting]
+    ]
 
-    OPERATOR + - * / % @  
+    #Display "Hello!"
+    #Display "Hey"
+    #Display "Hi"
 
-    ASSIGN:
 
-    DO()[]
+***Don't SCREAM at my compiler! I mean it depends on what you'r doing... Just a little joke. 😒***
 
-    COMPARISON( < > ! OR &&)
-
-    DISPLAY[]
-
-    RESUME| CONCATINATION
-
-    INDEX{}
-
-    COMMENT #
-
-    ESCAPE //
-
-    CHAIN.
-
-    EXIST?
-
-    VAR$
-
-    SEPERATE,
