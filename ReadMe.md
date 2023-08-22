@@ -41,11 +41,18 @@ Although we are not focusing on speed, we are focusing on the ability to create 
 
 **Define a Variable <TYPE>**
 
+A variable should be defined with a type.
+Generally, you can define and set a variable by using the following syntax:
+
+    <TYPE> <NAME>: <VALUE>
+
+TYPE: is the type of variable you are defining.  This can be any of the following:
+
     STRING Welcome: "Hello World!"
     Define a String Variable
 
     INDEX Greetings: ["Hello", "Hey!", "Hi!"]
-    JSON Object-like based Indexing System
+    Array/Dictionary/LIST type.  Can be used as an index.
 
     FLOAT Float: 12.0 
     Extended Float High Precision - Memory intensive
@@ -56,8 +63,19 @@ Although we are not focusing on speed, we are focusing on the ability to create 
     BOOL Check: TRUE/FALSE/EXIST
     Bool Check with Safe Check.
 
+    OBJECT Obj: { "Key": "Value" }
+    JSON Object-like based Indexing System
+
+Required: Types should be ALL-Caps and should be defined before the variable name. The variable should be defined in Camel-Case: Meaning first letter capitalized and the rest lowercase, while spaces should NOT be used when defining variable names.
+
+*Example: This_Is_A_Variable*
+
+The VALUE of the variable should be assigned as needed.
+
+
 **CREATE A Function**
-    #Type/Class/Method/Function: are implemented in First Letter Capitalized yet you can use all caps if you want. Ex: Fun()
+
+Type/Class/Method/Function: are implemented in First Letter Capitalized yet you can use all caps if you want. 
 
     VOID CREATE X()[
         DISPLAY[Greeting]
@@ -66,28 +84,37 @@ Although we are not focusing on speed, we are focusing on the ability to create 
 ![CREATE A TYPE CLASS METHOD OR FUNCTION](FEATURES/DIAGRAMS/CREATE.png "CREATE")
 
 **Call A Function**
-    #CALL/EXECUTE/USE/GET/SET: are implemented in ALL CAPS
+
+CALL: EXECUTE/USE/GET/SET
     
     CALL X()
 
-**CREATE an Instance of... Class**
-    #NEW: To implement a NEW instance of a class.
+![CALL METHOD](FEATURES/DIAGRAMS/CALL.png "CALL")
+
+**CREATE an Instance of a... Class**
+
+NEW: To implement a NEW instance of a class, you must use the NEW keyword.  In this example NEW will create a new instance of the "X" class and name it "X2". 
 
     NEW X2 X()
 
+![NEW INSTANCE](FEATURES/DIAGRAMS/NEW.png "NEW")
 
-**CREATE an Instance of... Class with Parameters**
-    #Convention: Parameters All-Lower case.
+**RIDE and CREATE an Instance of... Class with Parameters**
+
+ You can also use the RIDE keyword to create a new instance of a class that implements the RIDEABLE interface.  This will allow you to create a new instance of a class that implements the RIDEABLE interface for overwriting classes a type of INHERITANCE/POLYMORPHISM paradigm.
+
+*Convention: Parameters All-Lower case.*
 
     RIDE NEW X2 X(STRING string, INTEGER int)
     [
+        
         DISPLAY[string]
-        DISPLAY[int]
+        DISPLAY[int] #Convention: Pass variable ARGUMENTS
     ]
 
-![NEW INSTANCE](FEATURES/DIAGRAMS/NEW.png "CREATE")
+![NEW RIDEABLE INSTANCE](FEATURES/DIAGRAMS/RIDE.png "RIDE")
 
-**GRAB to iterate through an index**
+**GRAB to ITERARATE through an INDEX**
  
     GRAB Greeting IN Greetings[
         DISPLAY[Greeting]
