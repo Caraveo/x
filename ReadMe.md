@@ -1,6 +1,14 @@
 
 ![Mini X Logo](FEATURES/DIAGRAMS/LOGO/x_mini.png "LOGO")
 
+**Do we need another "X" Language?**
+Well, no. But we want it.  We want to create a language that is easy to use, easy to learn, and easy to implement.  We want to create a language that is easy to read and easy to write.  We want to create a language that is easy to understand and creates beautiful cross platform apps.  Leveraging beautiful GUI libraries.
+
+Being built from kinda-scratch to be Cloud-ready, XR-focused, and mobile first. Yet is still Desktop-friendly.
+
+ (ง︡'-'︠)ง That's big feature list... we are going to do it. (ง'-'︡ง)
+
+
 **EXTENSIBLE PROGRAMMING LANGUAGE**
 
 *XPL or X++ is a programming language that is designed to be easy to use and easy to learn. It is a compiled language that is designed to be compiled into C++ code. It is designed to be a general-purpose language that can be used for anything yet is leveraging the power of C++ to make it easier to make API calls and create simple programs with NICE interfaces.*
