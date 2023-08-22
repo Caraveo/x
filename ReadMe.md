@@ -12,6 +12,19 @@ Not optimized for compilation speed yet for ease of use and readability.  It is 
 
 Although we are not focusing on speed, we are focusing on the ability to create *fast* programs that can be used on any platform.  In the future, we plan on implementing a JIT compiler to make it even faster, as well as Garbage Collection, and a Memory Management System.
 
+XPL uses the [K&R](https://en.wikipedia.org/wiki/Indentation_style#K&R_style), [Style indentation](https://en.wikipedia.org/wiki/Indentation_style).
+
+When following K&R, each function has its opening brace at the next line on the same indentation level as its header, the statements within the braces are indented, and the closing brace at the end is on the same indentation level as the header of the function at a line of its own. 
+
+
+We use [ ] instead of { } to make it easier to read and write. As we believe { } should be used for JSON and other data structures.
+
+The same applies to the IF, GRAB : FOR, and LOOP : WHILE statements.
+
+    IF (condition)[
+        Logic();
+    ]
+
 **FEATURES Inspired By Great Programming Languages**
 
     COMPILED - Fast Binaries and Fast Execution [C++]
@@ -107,9 +120,7 @@ NEW: To implement a NEW instance of a class, you must use the NEW keyword.  In t
 
 *Convention: Parameters All-Lower case.*
 
-    RIDE NEW X2 X(STRING string, INTEGER int)
-    [
-        
+    RIDE NEW X2 X(STRING string, INTEGER int)[
         DISPLAY[string]
         DISPLAY[int] #Convention: Pass variable ARGUMENTS
     ]
