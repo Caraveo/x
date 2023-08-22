@@ -96,7 +96,3 @@ Although we are not focusing on speed, we are focusing on the ability to create 
     #Display "Hello!"
     #Display "Hey"
     #Display "Hi"
-
-
-***Don't SCREAM at my compiler! I mean it depends on what you're doing... Just a little joke. 😒***
-
