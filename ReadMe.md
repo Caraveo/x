@@ -46,7 +46,9 @@ Generally, you can define and set a variable by using the following syntax:
 
     <TYPE> <NAME>: <VALUE>
 
-TYPE: is the type of variable you are defining.  This can be any of the following:
+TYPE is the type of variable you are defining. NAME is the name of the variable. VALUE is what you want the variable to be set to.
+  
+This can be any of the following:
 
     STRING Welcome: "Hello World!"
     Define a String Variable
