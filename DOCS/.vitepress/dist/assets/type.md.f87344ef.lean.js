@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as t,S as s}from"./chunks/framework.f15d8f8c.js";const g=JSON.parse('{"title":"Define a Variable TYPE","description":"","frontmatter":{},"headers":[],"relativePath":"type.md","filePath":"type.md"}'),n={name:"type.md"},l=s("",31),i=[l];function o(r,p,c,d,h,u){return a(),t("div",null,i)}const y=e(n,[["render",o]]);export{g as __pageData,y as default};
