@@ -2,11 +2,11 @@
 ![Mini X Logo](FEATURES/DIAGRAMS/LOGO/x_mini.png "LOGO")
 
 **Do we need another "X" Language?**
-Well, no. But we want it.  We want to create a language that is easy to use, easy to learn, and easy to implement.  We want to create a language that is easy to read and easy to write.  We want to create a language that is easy to understand and creates beautiful cross platform apps.  Leveraging beautiful GUI libraries.
+Well, no. But we want it.  We want to create a language that is easy to use, easy to learn, and easy to implement.  We want to create a language that is easy to read and easy to write.  We want to create a language that is easy to understand and creates beautiful cross-platform apps.  Leveraging beautiful GUI libraries.
 
-Being built from kinda-scratch to be Cloud-ready, XR-focused, and mobile first. Yet is still Desktop-friendly.
+Being built from a kind of scratch to be Cloud-ready, XR-focused, and mobile-first. Yet is still Desktop-friendly.
 
- (ง︡'-'︠)ง That's big feature list... we are going to do it. (ง'-'︡ง)
+ (ง︡'-'︠)ง That's a big feature list... we are going to do it. (ง'-'︡ง)
 
 
 **EXTENSIBLE PROGRAMMING LANGUAGE**
@@ -25,9 +25,9 @@ XPL uses the [K&R](https://en.wikipedia.org/wiki/Indentation_style#K&R_style), [
 When following K&R, each function has its opening brace at the next line on the same indentation level as its header, the statements within the braces are indented, and the closing brace at the end is on the same indentation level as the header of the function at a line of its own. 
 
 
-We use [ ] instead of { } to make it easier to read and write. As we believe { } should be used for JSON and other data structures.
+We use [ ] instead of { } to make it easier to read and write. We believe { } should be used for JSON and other data structures.
 
-The same applies to the IF, GRAB : FOR, and LOOP : WHILE statements.
+The same applies to the IF, (GRAB = FOR), and (LOOP = WHILE) statements.
 
     IF (condition)[
         Logic();
@@ -55,7 +55,7 @@ The same applies to the IF, GRAB : FOR, and LOOP : WHILE statements.
 
     MODEL - Model-Based Programming [Swift]
 
-    DYNAMIC INFERENCE  - Dynamic Type don't have to declare types, yet strongly recommended [Python]
+    DYNAMIC INFERENCE  - Dynamic Type you don't have to declare types, yet strongly recommended [Python]
 
     STATIC INFERENCE - Static Type, must declare types [C++] or be Warned [C#] Disable in Compiler Options
 
@@ -89,7 +89,7 @@ This can be any of the following:
     OBJECT Obj: { "Key": "Value" }
     JSON Object-like based Indexing System
 
-Required: Types should be ALL-Caps and should be defined before the variable name. The variable should be defined in Camel-Case: Meaning first letter capitalized and the rest lowercase, while spaces should NOT be used when defining variable names.
+Required: Types should be ALL-Caps and should be defined before the variable name. The variable should be defined in Cap-Case: Meaning the first letter capitalized and the rest lowercase, while spaces should NOT be used when defining variable names.
 
 *Example: This_Is_A_Variable*
 
@@ -116,7 +116,7 @@ CALL: EXECUTE/USE/GET/SET
 
 **CREATE an Instance of a... Class**
 
-NEW: To implement a NEW instance of a class, you must use the NEW keyword.  In this example NEW will create a new instance of the "X" class and name it "X2". 
+NEW: To implement a NEW instance of a class, you must use the NEW keyword.  In this example, NEW will create a new instance of the "X" class and name it "X2". 
 
     NEW X2 X()
 
