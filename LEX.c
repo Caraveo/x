@@ -32,7 +32,7 @@ typedef enum{
     SPECIAL,
     ENDOF,
     COMM,
-    EXPLAM,
+    EXLAM,
     AMPER,
     DEFAULT,
     RESERVED,
@@ -68,7 +68,7 @@ const char* Token_Type_Name[] = {
     "SPECIAL",
     "ENDOF",
     "COMM",
-    "EXPLAM",
+    "EXLAMATION",
     "AMPER",
     "DEFAULT",
     "RESERVED",
@@ -92,6 +92,7 @@ Token create_Token(Token_Type type, Token_Type lex_type, Lex lex){
     Token token;
     token.type = lex_type;
     token.token_type_name_string = Token_Type_Name[type];
+    token.lex = lex;
     return token;
 }
 
@@ -151,7 +152,7 @@ Lex process_lexem(char lex)
     Lex RIGHT_ARROW = create_lex(OPERATOR, "->");
     Lex ELLIPSIS = create_lex(OPERATOR, "...");
     Lex COLON_EQUAL = create_lex(OPERATOR, ":=");
-    Lex EXPLAMATION = create_lex(OPERATOR, "!");
+    Lex EXLAMATION = create_lex(OPERATOR, "!");
     Lex COMMENT = create_lex(OPERATOR, "#");
     Lex UNKNOWN_LEX = create_lex(UNKNOWN, "Unknown Lex");
     
@@ -225,7 +226,7 @@ Lex process_lexem(char lex)
             return COMMENT;
         break;
         case '!':
-            return EXPLAMATION;
+            return EXLAMATION;
         case '@':
             return AT;
         break;
@@ -274,8 +275,8 @@ Token process_Lex(Lex lex){
         case COMM:
             return create_Token(TYPE_COMMENT, lex.type, lex);
         break;
-        case EXPLAM:
-            return create_Token(EXPLAM, lex.type, lex);
+        case EXLAM:
+            return create_Token(EXLAM, lex.type, lex);
         break;
         case AMPER:
             return create_Token(AMPER, lex.type, lex);
@@ -344,7 +345,7 @@ Process_Tex(Tex tex){
 } 
 
 Process_Final_Token(Token token){
-    printf("%d", token.type); 
+    printf("%d\n", token.type);
 }
 
 void Process_File(char* file_name){
@@ -360,6 +361,6 @@ void Process_File(char* file_name){
 }
 
 int main() {
-    Process_File("pro.x");
+    Process_File("SRC/pro.x");
     return 0;
 }

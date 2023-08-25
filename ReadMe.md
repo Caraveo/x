@@ -1,5 +1,5 @@
 
-![Mini X Logo](FEATURES/DIAGRAMS/LOGO/x_mini.png "LOGO")
+![Mini X Logo](FEATURES/DIAGRAMS/LOGO/x.png "LOGO")
 
 **Do we need another "X" Language?**
 Well, no. But we want it.  We want to create a language that is easy to use, easy to learn, and easy to implement.  We want to create a language that is easy to read and easy to write.  We want to create a language that is easy to understand and creates beautiful cross-platform apps.  Leveraging beautiful GUI libraries.
