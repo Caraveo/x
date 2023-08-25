@@ -75,10 +75,12 @@ const char* Token_Type_Name[] = {
     "LEX"
 } ;
 
+
 typedef struct { 
     Token_Type type;
     const char* value;
 } Lex;
+
 
 typedef struct { 
     Lex lex;
@@ -99,7 +101,6 @@ Lex create_lex(Token_Type type, const char* value) {
     lex.value = value;
     return lex;
 }
-
 
 Lex process_lexem(char lex)
 {
@@ -256,7 +257,6 @@ typedef enum{
     CAPITAL
 } RESERVE;
 
-
 Token process_Lex(Lex lex){
     switch (lex.type) {
         case LEX:
@@ -312,14 +312,14 @@ Tex create_tex(char* line, Rex rex){
 Rex Lexer(char line[100]){
     Rex rex;
     rex.line = line;
+    char* LEX_NAME[30];
+    Tex tex;
     for (int i = 0; i < strlen(line); i++) {
         char lexem = line[i];
         Lex rLex = process_lexem(lexem);
         Token token = process_Lex(rLex);
-
-        Token Final_Token = create_Token(LEX, token.type, rLex);
-
-        char* LEX_NAME[30];
+        
+        Token Final_Token;
 
         if(token.type == LEX){
             int line_count = 0;
@@ -328,26 +328,23 @@ Rex Lexer(char line[100]){
                 rLex = process_lexem(lexem);
                 token = process_Lex(rLex);
                 line_count++;
-                strcat(LEX_NAME, rLex.value);
+                strncat(LEX_NAME, rLex.value, sizeof(LEX_NAME) - strlen(LEX_NAME) - 1);
             }
             line_count = 0;
+            Final_Token = create_Token(LEX, token.type, rLex);
+            Process_Final_Token(Final_Token);
         }
-
-        Tex tex = create_tex(*LEX_NAME, rex);
-
-        if(token.type == OPERATOR){
-            int line_count = 0;
-            while (token.type == LEX) {
-                lexem = line[i++];
-                rLex = process_lexem(lexem);
-                token = process_Lex(rLex);
-                line_count++;
-            }
-            line_count = 0;
-        }
-        
+        tex = create_tex(*LEX_NAME, rex);
     }
     return rex;
+}
+
+Process_Tex(Tex tex){
+    printf("%s", tex.set);
+} 
+
+Process_Final_Token(Token token){
+    printf("%d", token.type); 
 }
 
 void Process_File(char* file_name){
@@ -358,11 +355,9 @@ void Process_File(char* file_name){
         Rex rRex = Lexer(line);
         rRex.index = line_count;
         line_count++;
-        Process_Line(rRex);
     }
     fclose(file);
 }
-
 
 int main() {
     Process_File("pro.x");
