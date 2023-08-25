@@ -299,13 +299,13 @@ typedef struct {
 
 typedef struct {
     Rex rex;
-    char* line;
+    char* set;
     int index;
 } Tex;
 
-Tex create_tex(Rex rex, char* line){
+Tex create_tex(char* line, Rex rex){
     Tex tex;
-    tex.line = rex.line;
+    tex.set = rex.line;
     return tex;
 }
 
@@ -333,6 +333,8 @@ Rex Lexer(char line[100]){
             line_count = 0;
         }
 
+        Tex tex = create_tex(*LEX_NAME, rex);
+
         if(token.type == OPERATOR){
             int line_count = 0;
             while (token.type == LEX) {
@@ -347,46 +349,6 @@ Rex Lexer(char line[100]){
     }
     return rex;
 }
-
-
-Token Process_Line(Rex rex){
-    Rex rex;
-    char* line = rex.line;
-    for (int i = 0; i < strlen(line); i++) {
-        char lexem = line[i];
-        Lex rLex = process_lexem(lexem);
-        Token token = process_Lex(rLex);
-
-        Token Final_Token = create_Token(LEX, token.type, rLex);
-
-        char* LEX_NAME[30];
-
-        if(token.type == LEX){
-            int line_count = 0;
-            while (token.type == LEX) {
-                lexem = line[i++];
-                rLex = process_lexem(lexem);
-                token = process_Lex(rLex);
-                line_count++;
-                strcat(LEX_NAME, rLex.value);
-            }
-            line_count = 0;
-        }
-
-        if(token.type == OPERATOR){
-            int line_count = 0;
-            while (token.type == LEX) {
-                lexem = line[i++];
-                rLex = process_lexem(lexem);
-                token = process_Lex(rLex);
-                line_count++;
-            }
-            line_count = 0;
-        }
-        return token;
-    }
-}
-    
 
 void Process_File(char* file_name){
     int line_count = 0;
