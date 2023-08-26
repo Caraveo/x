@@ -27,7 +27,9 @@
         "xlocmon": "c",
         "xloctime": "c",
         "xmemory": "c",
-        "xstring": "c"
+        "xstring": "c",
+        "stdio.h": "c",
+        "lex.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
