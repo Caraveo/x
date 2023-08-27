@@ -101,19 +101,4 @@ typedef struct {
     int index;
 } Rex;
 
-typedef struct {
-    Rex rex;
-    const char* set[100];
-    int index;
-} Tex;
-
-Tex Create_Tex(const char* line[100], Rex rex){
-    Tex tex;
-    tex.rex = rex;
-    for (int i = 0; i < 100; i++) {
-        tex.set[i] = line[i];
-    }
-    return tex;
-}
-
 #endif
