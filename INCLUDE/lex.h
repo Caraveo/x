@@ -4,7 +4,7 @@
 typedef enum{
     ENDMARKER,
     NAME,
-    NUMBER_TOKENTYPE,
+    NUMBER_TYPE,
     STRING_TOKENTYPE,
     INDENT,
     DEDENT,
@@ -40,7 +40,7 @@ typedef enum{
 const char* Token_Type_Name[] = {
     "ENDMARKER",
     "NAME",
-    "NUMBER_TOKENTYPE",
+    "NUMBER_TYPE",
     "STRING_TOKENTYPE",
     "INDENT",
     "DEDENT",
@@ -74,7 +74,7 @@ const char* Token_Type_Name[] = {
 } ;
 
 typedef enum{
-    NUMBER,
+    NUMBER_RESERVED,
     IF,
     CREATE,
     VOID,
@@ -99,13 +99,16 @@ typedef struct {
 
 typedef struct {
     Rex rex;
-    char* set;
+    const char* set[100];
     int index;
 } Tex;
 
-Tex Create_Tex(char* line, Rex rex){
+Tex Create_Tex(const char* line[100], Rex rex){
     Tex tex;
-    tex.set = rex.line;
+    tex.rex = rex;
+    for (int i = 0; i < 100; i++) {
+        tex.set[i] = line[i];
+    }
     return tex;
 }
 

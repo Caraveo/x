@@ -17,10 +17,13 @@ Lex Create_Lex(Token_Type type, const char* value) {
 
 Lex Process_Lexem(char lex)
 {
-    Lex LEFT_PARANTHESIS = Create_Lex(OPERATOR, "(");
-    Lex RIGHT_PARANTHESIS = Create_Lex(OPERATOR, ")");
-    Lex LEFT_SQUAREBRACKET = Create_Lex(OPERATOR, "[");
-    Lex RIGHT_SQUAREBRACKET = Create_Lex(OPERATOR, "]");
+    Lex LEFT_PARANTHESIS = Create_Lex(SPECIAL, "(");
+    Lex RIGHT_PARANTHESIS = Create_Lex(SPECIAL, ")");
+    Lex LEFT_SQUAREBRACKET = Create_Lex(SPECIAL, "[");
+    Lex RIGHT_SQUAREBRACKET = Create_Lex(SPECIAL, "]");
+    Lex LEFT_BRACE = Create_Lex(SPECIAL, "{");
+    Lex RIGHT_BRACE = Create_Lex(SPECIAL, "}");
+
     Lex COLON = Create_Lex(OPERATOR, ":");
     Lex COMMA = Create_Lex(OPERATOR, ","); 
     Lex SEMI = Create_Lex(OPERATOR, ";");
@@ -35,8 +38,6 @@ Lex Process_Lexem(char lex)
     Lex EQUAL = Create_Lex(OPERATOR, "=");
     Lex DOT = Create_Lex(OPERATOR, ".");
     Lex PERCENT = Create_Lex(OPERATOR, "%");
-    Lex LEFT_BRACE = Create_Lex(OPERATOR, "{");
-    Lex RIGHT_BRACE = Create_Lex(OPERATOR, "}");
     Lex EQUAL_EQUAL = Create_Lex(OPERATOR, "==");
     Lex NOT_EQUAL = Create_Lex(OPERATOR, "!=");
     Lex LESS_THAN_EQUAL_TO = Create_Lex(OPERATOR, "<=");
@@ -72,6 +73,7 @@ Lex Process_Lexem(char lex)
 
     Lex WHITESPACE_LEX = Create_Lex(WHITESPACE, lexi);
     Lex LEX_LEX = Create_Lex(LEX, lexi);
+    Lex NUMBER = Create_Lex(NUMBER_TYPE, lexi);
 
     switch (lex) {
         case '{':
@@ -145,8 +147,198 @@ Lex Process_Lexem(char lex)
         case ' ':
             return WHITESPACE_LEX;
         break;
-        default:
+
+        case 'a':
             return LEX_LEX;
+        break;
+        case 'b':
+            return LEX_LEX;
+        break;
+        case 'c':
+            return LEX_LEX;
+        break;
+        case 'd':
+            return LEX_LEX;
+        break;
+        case 'e':
+            return LEX_LEX;
+        break;
+        case 'f':
+            return LEX_LEX;
+        break;
+        case 'g':
+            return LEX_LEX;
+        break;
+        case 'h':
+            return LEX_LEX;
+        break;
+        case 'i':
+            return LEX_LEX;
+        break;
+        case 'j':
+            return LEX_LEX;
+        break;
+        case 'k':
+            return LEX_LEX;
+        break;
+        case 'l':
+            return LEX_LEX;
+        break;
+        case 'm':
+            return LEX_LEX;
+        break;
+        case 'n':
+            return LEX_LEX;
+        break;
+        case 'o':
+            return LEX_LEX;
+        break;
+        case 'p':
+            return LEX_LEX;
+        break;
+        case 'q':
+            return LEX_LEX;
+        break;
+        case 'r':
+            return LEX_LEX;
+        break;
+        case 's':
+            return LEX_LEX;
+        break;
+        case 't':
+            return LEX_LEX;
+        break;
+        case 'u':
+            return LEX_LEX;
+        break;
+        case 'v':
+            return LEX_LEX;
+        break;
+        case 'w':
+            return LEX_LEX;
+        break;
+        case 'x':
+            return LEX_LEX;
+        break;
+        case 'y':
+            return LEX_LEX;
+        break;
+        case 'z':
+            return LEX_LEX;
+        break;
+
+        case 'A':
+            return LEX_LEX;
+        break;
+        case 'B':
+            return LEX_LEX;
+        break;
+        case 'C':
+            return LEX_LEX;
+        break;
+        case 'D':
+            return LEX_LEX;
+        break;
+        case 'E':
+            return LEX_LEX;
+        break;
+        case 'F':
+            return LEX_LEX;
+        break;
+        case 'G':
+            return LEX_LEX;
+        break;
+        case 'H':
+            return LEX_LEX;
+        break;
+        case 'I':
+            return LEX_LEX;
+        break;
+        case 'J':
+            return LEX_LEX;
+        break;
+        case 'K':
+            return LEX_LEX;
+        break;
+        case 'L':
+            return LEX_LEX;
+        break;
+        case 'M':
+            return LEX_LEX;
+        break;
+        case 'N':
+            return LEX_LEX;
+        break;
+        case 'O':
+            return LEX_LEX;
+        break;
+        case 'P':
+            return LEX_LEX;
+        break;
+        case 'Q':
+            return LEX_LEX;
+        break;
+        case 'R':
+            return LEX_LEX;
+        break;
+        case 'S':
+            return LEX_LEX;
+        break;
+        case 'T':
+            return LEX_LEX;
+        break;
+        case 'U':
+            return LEX_LEX;
+        break;
+        case 'V':
+            return LEX_LEX;
+        break;
+        case 'W':
+            return LEX_LEX;
+        break;
+        case 'X':
+            return LEX_LEX;
+        break;
+        case 'Y':
+            return LEX_LEX;
+        break;
+        case 'Z':
+            return LEX_LEX;
+        break;
+
+        case '0':
+            return NUMBER;
+        break;
+        case '1':
+            return NUMBER;
+        break;
+        case '2':
+            return NUMBER;
+        break;
+        case '3':
+            return NUMBER;
+        break;
+        case '4':
+            return NUMBER;
+        break;
+        case '5':
+            return NUMBER;
+        break;
+        case '6':
+            return NUMBER;
+        break;
+        case '7':
+            return NUMBER;
+        break;
+        case '8':
+            return NUMBER;
+        break;
+        case '9':
+            return NUMBER;
+        break;
+
+        default:
+            return UNKNOWN_LEX;
         break;
     }
 }

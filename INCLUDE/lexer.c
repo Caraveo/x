@@ -42,14 +42,11 @@ Token Process_Lex(Lex lex){
         case AMPER:
             return Create_Token(AMPER, lex.type, lex);
         break;
-        case NUMBER:
-            return Create_Token(AMPER, lex.type, lex);
+        case NUMBER_TYPE:
+            return Create_Token(NUMBER_TYPE, lex.type, lex);
         break;
         case NAME:
             return Create_Token(AMPER, lex.type, lex);
-        break;
-        default:
-            return Create_Token(DEFAULT, lex.type, lex);
         break;
     }
 }
