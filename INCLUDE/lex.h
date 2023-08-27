@@ -35,6 +35,7 @@ typedef enum{
     AMPER,
     DEFAULT,
     RESERVED,
+    CAP_LEX,
     LEX
 } Token_Type;
 
@@ -72,6 +73,7 @@ const char* Token_Type_Name[] = {
     "AMPER",
     "DEFAULT",
     "RESERVED",
+    "CAP_LEX",
     "LEX"
 } ;
 

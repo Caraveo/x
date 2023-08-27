@@ -31,25 +31,36 @@ Rex Lexer(char line[100]){
         if(token.type == NUMBER_TYPE){
             printf("[%s]", Token_Type_Name[rLex.type]);
         }
-        if(token.type == LEX){
-            while (token.type == LEX) {
-                LEX_NAME[i] = rLex.value;
+        if(token.type == LEX || token.type == CAP_LEX){
+            int lex_length = 0;
+            while (token.type == LEX || token.type == CAP_LEX) {
                 lexem = line[i++];
                 rLex = Process_Lexem(lexem);
                 token = Process_Lex(rLex);
-                printf("[%s]", Token_Type_Name[rLex.type]);
+                LEX_NAME[i] = rLex.value;
+                printf("[%s]", Token_Type_Name[token.type]);
+                lex_length += strlen(LEX_NAME[i]);
+                
             }
-            Final_Token = Create_Token(LEX, token.type, rLex);
+            char token_lex[lex_length];
+            token_lex[0] = '\0';
+            for (int j = 0; LEX_NAME[j] != NULL; j++) {
+                strcat(token_lex, LEX_NAME[j]);
+            }
+
+            printf("%s", token_lex);
         }
+        
         if(token.type == SPECIAL){
             printf("[%s]", Token_Type_Name[rLex.type]);
         }
-        
        tex = Create_Tex(LEX_NAME, rex);
     }
+
     printf("\n %s \n", tex.rex.line);
     return rex;
 }
+
 
 void Process_File(char* file_name){
     int line_count = 0;

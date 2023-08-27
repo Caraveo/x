@@ -24,6 +24,9 @@ Token Process_Lex(Lex lex){
         case LEX:
             return Create_Token(LEX, lex.type, lex);
         break;
+        case CAP_LEX:
+            return Create_Token(CAP_LEX, lex.type, lex);
+        break;
         case OPERATOR:
             return Create_Token(OPERATOR, lex.type, lex);
         break;
