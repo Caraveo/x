@@ -30,6 +30,12 @@ Token Process_Lex(Lex lex){
         case UNKNOWN:
             return Create_Token(UNKNOWN, lex.type, lex);
         break;
+        case NEWLINE:
+            return Create_Token(NEWLINE, lex.type, lex);
+        break;
+        case TAB:
+            return Create_Token(TAB, lex.type, lex);
+        break;
         case WHITESPACE:
             return Create_Token(WHITESPACE, lex.type, lex);
         break;
@@ -44,6 +50,9 @@ Token Process_Lex(Lex lex){
         break;
         case NUMBER_TYPE:
             return Create_Token(NUMBER_TYPE, lex.type, lex);
+        break;
+        case SPECIAL:
+            return Create_Token(SPECIAL, lex.type, lex);
         break;
         case NAME:
             return Create_Token(AMPER, lex.type, lex);

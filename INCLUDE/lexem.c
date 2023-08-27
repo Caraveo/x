@@ -2,6 +2,7 @@
 #define LEXEM_C
 
 #include "lex.h"
+#include <string.h>
 
 typedef struct { 
     Token_Type type;
@@ -17,63 +18,66 @@ Lex Create_Lex(Token_Type type, const char* value) {
 
 Lex Process_Lexem(char lex)
 {
-    Lex LEFT_PARANTHESIS = Create_Lex(SPECIAL, "(");
-    Lex RIGHT_PARANTHESIS = Create_Lex(SPECIAL, ")");
-    Lex LEFT_SQUAREBRACKET = Create_Lex(SPECIAL, "[");
-    Lex RIGHT_SQUAREBRACKET = Create_Lex(SPECIAL, "]");
-    Lex LEFT_BRACE = Create_Lex(SPECIAL, "{");
-    Lex RIGHT_BRACE = Create_Lex(SPECIAL, "}");
+    Lex LEFT_PARANTHESIS = Create_Lex(SPECIAL, '(');
+    Lex RIGHT_PARANTHESIS = Create_Lex(SPECIAL, ')');
+    Lex LEFT_SQUAREBRACKET = Create_Lex(SPECIAL, '[');
+    Lex RIGHT_SQUAREBRACKET = Create_Lex(SPECIAL, ']');
+    Lex LEFT_BRACE = Create_Lex(SPECIAL, '{');
+    Lex RIGHT_BRACE = Create_Lex(SPECIAL, '}');
 
-    Lex COLON = Create_Lex(OPERATOR, ":");
-    Lex COMMA = Create_Lex(OPERATOR, ","); 
-    Lex SEMI = Create_Lex(OPERATOR, ";");
-    Lex PLUS = Create_Lex(OPERATOR, "+");
-    Lex MINUS = Create_Lex(OPERATOR, "-");
-    Lex STAR = Create_Lex(OPERATOR, "");
-    Lex SLASH = Create_Lex(OPERATOR, "/");
-    Lex VERTICAL_BAR =  Create_Lex(OPERATOR, "|");
-    Lex AMPER_SIGN = Create_Lex(OPERATOR, "&");
-    Lex LESS_THAN = Create_Lex(OPERATOR, "<");
-    Lex GREATER_THAN = Create_Lex(OPERATOR, ">");
-    Lex EQUAL = Create_Lex(OPERATOR, "=");
-    Lex DOT = Create_Lex(OPERATOR, ".");
-    Lex PERCENT = Create_Lex(OPERATOR, "%");
-    Lex EQUAL_EQUAL = Create_Lex(OPERATOR, "==");
-    Lex NOT_EQUAL = Create_Lex(OPERATOR, "!=");
-    Lex LESS_THAN_EQUAL_TO = Create_Lex(OPERATOR, "<=");
-    Lex GREATER_THAN_EQUAL_TO = Create_Lex(OPERATOR, ">=");
-    Lex TILDE = Create_Lex(OPERATOR, "~");
-    Lex CIRCUMFLEX = Create_Lex(OPERATOR, "^");
-    Lex LEFT_SHIFT = Create_Lex(OPERATOR, "<<");
-    Lex RIGHT_SHIFT = Create_Lex(OPERATOR, ">>");
-    Lex DOUBLE_STAR = Create_Lex(OPERATOR, "");
-    Lex PLUS_EQUAL = Create_Lex(OPERATOR, "+=");
-    Lex MINUS_EQUAL = Create_Lex(OPERATOR, "-=");
-    Lex STAR_EQUAL = Create_Lex(OPERATOR, "=");
-    Lex DIVIDE_EQUAL = Create_Lex(OPERATOR, "/=");
-    Lex PERCENT_EQUAL = Create_Lex(OPERATOR, "%=");
-    Lex AMPER_SIGN_EQUAL = Create_Lex(OPERATOR, "&=");
-    Lex VERTICAL_BAR_EQUAL = Create_Lex(OPERATOR, "|=");
-    Lex CIRCUM_EQUAL = Create_Lex(OPERATOR, "^=");
-    Lex LEFT_SHIFT_EQUAL = Create_Lex(OPERATOR, "<<=");
-    Lex RIGHT_SHIT_EQUAL = Create_Lex(OPERATOR, ">>=");
-    Lex DOUBLE_STAR_EQUAL = Create_Lex(OPERATOR, "**=");
-    Lex DOUBLE_SLASH = Create_Lex(OPERATOR, "//");
-    Lex DOUBLE_SLASH_EQUAL = Create_Lex(OPERATOR, "//=");
-    Lex AT = Create_Lex(OPERATOR, "@");
-    Lex AT_EQUAL = Create_Lex(OPERATOR, "@=");
-    Lex RIGHT_ARROW = Create_Lex(OPERATOR, "->");
-    Lex ELLIPSIS = Create_Lex(OPERATOR, "...");
-    Lex COLON_EQUAL = Create_Lex(OPERATOR, ":=");
-    Lex EXLAMATION = Create_Lex(OPERATOR, "!");
-    Lex COMMENT = Create_Lex(OPERATOR, "#");
-    Lex UNKNOWN_LEX = Create_Lex(UNKNOWN, "Unknown Lex");
-    
+    Lex COLON = Create_Lex(OPERATOR, ':');
+    Lex COMMA = Create_Lex(OPERATOR, ','); 
+    Lex SEMI = Create_Lex(OPERATOR, ';');
+    Lex PLUS = Create_Lex(OPERATOR, '+');
+    Lex MINUS = Create_Lex(OPERATOR, '-');
+    Lex STAR = Create_Lex(OPERATOR, '*');
+    Lex SLASH = Create_Lex(OPERATOR, '/');
+    Lex VERTICAL_BAR =  Create_Lex(OPERATOR, '|');
+    Lex AMPER_SIGN = Create_Lex(OPERATOR, '&');
+    Lex LESS_THAN = Create_Lex(OPERATOR, '<');
+    Lex GREATER_THAN = Create_Lex(OPERATOR, '>');
+    Lex EQUAL = Create_Lex(OPERATOR, '=');
+    Lex DOT = Create_Lex(OPERATOR, '.');
+    Lex PERCENT = Create_Lex(OPERATOR, '%');
+    Lex EQUAL_EQUAL = Create_Lex(OPERATOR, '==');
+    Lex NOT_EQUAL = Create_Lex(OPERATOR, '!=');
+    Lex LESS_THAN_EQUAL_TO = Create_Lex(OPERATOR, '<=');
+    Lex GREATER_THAN_EQUAL_TO = Create_Lex(OPERATOR, '>=');
+    Lex TILDE = Create_Lex(OPERATOR, '~');
+    Lex CIRCUMFLEX = Create_Lex(OPERATOR, '^');
+    Lex LEFT_SHIFT = Create_Lex(OPERATOR, '<<');
+    Lex RIGHT_SHIFT = Create_Lex(OPERATOR, '>>');
+    Lex DOUBLE_STAR = Create_Lex(OPERATOR, '**');
+    Lex PLUS_EQUAL = Create_Lex(OPERATOR, '+=');
+    Lex MINUS_EQUAL = Create_Lex(OPERATOR, '-=');
+    Lex STAR_EQUAL = Create_Lex(OPERATOR, '=');
+    Lex DIVIDE_EQUAL = Create_Lex(OPERATOR, '/=');
+    Lex PERCENT_EQUAL = Create_Lex(OPERATOR, '%=');
+    Lex AMPER_SIGN_EQUAL = Create_Lex(OPERATOR, '&=');
+    Lex VERTICAL_BAR_EQUAL = Create_Lex(OPERATOR, '|=');
+    Lex CIRCUM_EQUAL = Create_Lex(OPERATOR, '^=');
+    Lex LEFT_SHIFT_EQUAL = Create_Lex(OPERATOR, '<<=');
+    Lex RIGHT_SHIT_EQUAL = Create_Lex(OPERATOR, '>>=');
+    Lex DOUBLE_STAR_EQUAL = Create_Lex(OPERATOR, '**=');
+    Lex DOUBLE_SLASH = Create_Lex(OPERATOR, '//');
+    Lex DOUBLE_SLASH_EQUAL = Create_Lex(OPERATOR, '//=');
+    Lex AT = Create_Lex(OPERATOR, '@');
+    Lex AT_EQUAL = Create_Lex(OPERATOR, '@=');
+    Lex RIGHT_ARROW = Create_Lex(OPERATOR, '->');
+    Lex ELLIPSIS = Create_Lex(OPERATOR, '...');
+    Lex COLON_EQUAL = Create_Lex(OPERATOR, ':=');
+    Lex EXLAMATION = Create_Lex(OPERATOR, '!');
+    Lex COMMENT = Create_Lex(OPERATOR, '#');
+
     char lexi[2] = {lex, '\0'};
+
+    Lex UNKNOWN_LEX = Create_Lex(UNKNOWN, lexi);
 
     Lex WHITESPACE_LEX = Create_Lex(WHITESPACE, lexi);
     Lex LEX_LEX = Create_Lex(LEX, lexi);
     Lex NUMBER = Create_Lex(NUMBER_TYPE, lexi);
+    Lex NEWLIN = Create_Lex(NEWLINE, lexi);
+    Lex TABB = Create_Lex(TAB, lexi);
 
     switch (lex) {
         case '{':
@@ -146,6 +150,10 @@ Lex Process_Lexem(char lex)
         break;
         case ' ':
             return WHITESPACE_LEX;
+        break;
+        
+        case '\n':
+            return NEWLIN;
         break;
 
         case 'a':
@@ -311,7 +319,6 @@ Lex Process_Lexem(char lex)
         break;
         case '1':
             return NUMBER;
-        break;
         case '2':
             return NUMBER;
         break;

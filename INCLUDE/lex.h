@@ -4,6 +4,7 @@
 typedef enum{
     ENDMARKER,
     NAME,
+    TAB,
     NUMBER_TYPE,
     STRING_TOKENTYPE,
     INDENT,
@@ -40,6 +41,7 @@ typedef enum{
 const char* Token_Type_Name[] = {
     "ENDMARKER",
     "NAME",
+    "TAB",
     "NUMBER_TYPE",
     "STRING_TOKENTYPE",
     "INDENT",

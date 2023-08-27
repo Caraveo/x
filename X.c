@@ -19,7 +19,18 @@ Rex Lexer(char line[100]){
         Token token = Process_Lex(rLex);
         
         Token Final_Token;
-
+        if (token.type == OPERATOR) {
+            printf("[%s]", Token_Type_Name[rLex.type]);
+        }
+        if(token.type == WHITESPACE){
+            printf("[%s]", Token_Type_Name[rLex.type]);
+        }
+        if(token.type == NEWLINE){
+            printf("[%s]", Token_Type_Name[rLex.type]);
+        }
+        if(token.type == NUMBER_TYPE){
+            printf("[%s]", Token_Type_Name[rLex.type]);
+        }
         if(token.type == LEX){
             while (token.type == LEX) {
                 LEX_NAME[i] = rLex.value;
@@ -27,17 +38,16 @@ Rex Lexer(char line[100]){
                 rLex = Process_Lexem(lexem);
                 token = Process_Lex(rLex);
                 printf("[%s]", Token_Type_Name[rLex.type]);
-                break;
             }
             Final_Token = Create_Token(LEX, token.type, rLex);
-        } else if(token.type == SPECIAL){
+        }
+        if(token.type == SPECIAL){
             printf("[%s]", Token_Type_Name[rLex.type]);
-            break;
         }
         
        tex = Create_Tex(LEX_NAME, rex);
     }
-    printf("%s", tex.rex.line);
+    printf("\n %s \n", tex.rex.line);
     return rex;
 }
 
