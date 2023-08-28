@@ -1,9 +1,7 @@
 Hello()[
     DISPLAY[Greetings]
 ]
-
 1 + 1
-
 World()
 ()
 [123]
