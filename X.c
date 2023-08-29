@@ -28,45 +28,50 @@ void Lexer(char line[100]){
 
         lexem_count++;
 
-        if(token.type == LEX || token.type == CAP_LEX){
+        if(token.type == LEX || token.type == CAP_LEX || token.type == NUMBER_TYPE){
             counter = 0;
-            if (encounter == 0){
+            if (encounter == 0 && spacer == 0){
                 LEX_NAME[encounter][counter + position++] = lexem;
-                printf("[%s]", Token_Type_Name[token.type]);
-                token_count++;
-            } else if(encounter == 1){
-                LEX_NAME[1][counter + position++] = lexem;
-            } else if(encounter > 1){
+            }else if (spacer >= 1) {
+                LEX_NAME[encounter][counter + position++] = lexem;
+            }else if(encounter == 1){
+                LEX_NAME[encounter][counter + position++] = lexem;
+            }else if(encounter > 1){
+                LEX_NAME[encounter][counter + position++] = lexem;
+            } else {
                 LEX_NAME[encounter][counter + position++] = lexem;
             }
         } else if (token.type == OPERATOR) {
-            printf("[%s]", Token_Type_Name[rLex.type]);
+            
         } else if(token.type == WHITESPACE){
             spacer++;
-            printf("[%s]", Token_Type_Name[rLex.type]);
+            counter = 0;
+            position = 0;
+            encounter++;
+            
         } else if(token.type == NEWLINE){
-            printf("[%s]", Token_Type_Name[rLex.type]);
-        } else if(token.type == NUMBER_TYPE){
-            printf("[%s]", Token_Type_Name[rLex.type]);
+            
         } else if(token.type == SPECIAL){
-            printf("[%s]", Token_Type_Name[token.type]);
+            spacer++;
             encounter++;
             position = 0;
+            counter = 0;
         } else {
-            printf("[%s]", Token_Type_Name[token.type]);}
+            printf("[%s]", Token_Type_Name[token.type]);
+        }
         counter++;
     }
 
-    printf("<%s>", LEX_NAME[0]);
-    printf("<%s>", LEX_NAME[1]);
-    
 
-    LEX_NAME[0][0] = '\0';
-    memset(LEX_NAME[0],0,sizeof(LEX_NAME[0]));
-
-    LEX_NAME[1][0] = '\0';
-    memset(LEX_NAME[1],0,sizeof(LEX_NAME[1]));
-    
+    int index = 0;
+    while (LEX_NAME[index][0] != '\0') {
+    if (LEX_NAME[index][0] != '\0') {
+        printf("<%s>", LEX_NAME[index]);
+        LEX_NAME[index][0] = '\0';
+        memset(LEX_NAME[index], 0, sizeof(LEX_NAME[index]));
+    }
+    index++; // Move to the next element in the array
+    }
 
     printf("\n");
     printf("Lex Iteration Count: %d\n", lexem_count);

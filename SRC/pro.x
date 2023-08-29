@@ -1,14 +1,5 @@
-Hello()[
-    DISPLAY[Greetings]
-]
-1 + 1
-World()
-()
-[123]
-A
-a
-1
-2
-3
-
- 
+STRING Hello INTEGER 12 CREATE X2 X(age name){
+    DISPLAY{Hello}
+Hello
+Hello World
+}
