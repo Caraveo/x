@@ -30,7 +30,7 @@ We use [ ] instead of { } to make it easier to read and write. We believe { } sh
 The same applies to the IF, (GRAB = FOR), and (LOOP = WHILE) statements.
 
     IF (condition)[
-        Logic();
+        Logic()
     ]
 
 **FEATURES Inspired By Great Programming Languages**
