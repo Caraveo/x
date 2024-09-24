@@ -1,5 +1,15 @@
 Copyright © 2023 Ziawe Inc.
-The Open License v1.1.1
+The Open License v1.1.2
+
+We believe programmers deserve the right to profit and/or make a living from their work. Ownership matters—whether it's proprietary code or simply being able to declare, "This is mine." Code is more than just lines of logic; it's a living record, a historical reference, and a tool for recall and creation. Sharing should be a choice, not a requirement. With ToL, that choice is yours.
+
+We also believe that when code is made public, it should retain the ability to be interpreted and adapted. Code shared in the public domain should not only be viewed but also reimagined, repurposed, and redistributed for polymorphic or derivative purposes—within the interpretation of appropriate licensee. This flexibility allows developers to evolve software in new directions, while still respecting the original intent and intellectual property of its creators.
+
+With TOL, we support responsible reuse of open code—allowing innovation to thrive while ensuring that proper credit and legal protection are maintained. By promoting a clear framework for code interpretation and redistribution, we aim to create a collaborative environment where both original authors and those who build upon their work are safeguarded.
+
+With TOL it comes down to [CHOICE].
+
+END-OF-COMMENTARY
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -8,7 +18,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-ONE: The above copyright notice and this permission notice shall be included in all
+ONE: The above license notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
 TWO: You must reference Ziawe Inc., as the "Origin" for the libraries and code you
