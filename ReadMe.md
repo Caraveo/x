@@ -79,13 +79,49 @@ The VALUE of the variable should be assigned as needed.
 
 ### CREATE A Function
 
-Type/Class/Method/Function: are implemented in First Letter Capitalized yet you can use all caps if you want. 
+Function names can start with a capital letter or use all caps. Declare the return type before `CREATE` and put the parameters in parentheses after the function name. Use `VOID` for a function that returns no value.
 
     VOID CREATE X()[
         DISPLAY[Greeting]
     ]
 
+Use `GIVE` to return a value. The return type can differ from the parameter type. For example, `ToInteger("42")` takes a `STRING` and returns the `INTEGER` `42`.
+
+    INTEGER CREATE ToInteger(STRING Text)[
+        GIVE INTEGER(Text)
+    ]
+
+To return multiple values from a single call, separate the return types with spaces before `CREATE`. Use `GIVE` with comma-separated values in the same order. The caller receives the values in an `INDEX`. In this example, `Convert(42, "7", 3)` returns `["42", 7, 3.0]`.
+
+    STRING INTEGER FLOAT CREATE Convert(INTEGER Number, STRING Text, INTEGER Count)[
+        GIVE STRING(Number), INTEGER(Text), FLOAT(Count)
+    ]
+
+The current Kit parser still expects commas between declared return types. The space-separated signature above is the X syntax.
+
 ![CREATE A TYPE CLASS METHOD OR FUNCTION](FEATURES/DIAGRAMS/CREATE.png "CREATE")
+
+### Class Scope and Field Visibility
+
+Declare a class with `CREATE Name[ ... ]`. The class body defines its fields and methods, and the class name can serve as a type in declarations such as `Player Target: NULL`.
+
+| Class field declaration | Kit Inspector |
+| --- | --- |
+| `INTEGER Score: 0` | Private by default and hidden from the Inspector. |
+| `PUBLIC INTEGER Health: 100` | Visible and read-only in the Inspector. |
+| `EDIT FLOAT Speed: 3.0` | Visible and editable in the Inspector. |
+
+`PUBLIC` and `EDIT` go before a class field's type. `EDIT` supports `STRING`, `INTEGER`, `FLOAT`, `BOOL`, and `VECTOR`.
+
+    CREATE Player[
+        INTEGER Score: 0
+        PUBLIC INTEGER Health: 100
+        EDIT FLOAT Speed: 3.0
+
+        VOID CREATE AddPoint()[
+            Score: Score + 1
+        ]
+    ]
 
 ### Call A Function
 
